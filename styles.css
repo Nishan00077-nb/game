@@ -1,0 +1,294 @@
+* {
+    width: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    background-image: url('assets/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%; 
+    height: 100vh; 
+}
+
+/* nav bar ko css starting  */
+
+header {
+    background-color: transparent;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+header .logo {
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    color: #ffffff;
+    padding-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header .logo a{
+    text-decoration: none;
+    color: white;
+}
+
+
+header nav {
+    padding-right: 20px; 
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; 
+}
+
+header nav ul li {
+    margin-left: 20px;
+    transition: margin-left 0.5s;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    color: #ffffff;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+header nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav {
+        padding-right: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* end of nav bar  */
+
+/* background img start  */
+
+
+
+/* background compledte  */
+
+
+.punk{
+    width: 250px;
+    height: 350px;
+    background-color: red;
+    border: 1px solid #ffffff;
+    position: relative;
+    top: 150px;
+    left: 100px;
+    z-index: 15;
+}
+
+.punk img{
+    width: 100%;
+    height: 100%;
+}
+
+.gta{
+    width: 250px;
+    height: 350px;
+    background-color: red;
+    border: 1px solid #ffffff;
+    position: relative;
+    top: -110px;
+    left: 260px;
+}
+
+.gta img{
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .punk, .gta {
+        width: 250px;
+        height: 350px;
+        margin: 20px;
+    }
+
+    .punk {
+        top: 150px;
+        left: 100px;
+    }
+
+    .gta {
+        top: -110px;
+        left: 260px;
+    }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 767px) {
+    .punk, .gta {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .punk, .gta {
+        position: static;
+        top: auto;
+        left: auto;
+    }
+}
+
+
+.intro-section {
+    position: absolute;
+    top: 160px;  
+    right: 220px; 
+    max-width: 500px;
+    text-align: center;
+    background-color: transparent; 
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.intro-content .welcome-text {
+    color: #ffffff; 
+}
+
+.intro-content .site-name {
+    color: #00ff00; 
+    text-shadow: 2px 2px #000000;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    color: #cccccc; 
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .intro-section {
+        top: 10px;  
+        right: 10px;  
+        max-width: 100%; 
+    }
+
+    .intro-content h1 {
+        font-size: 2rem;
+    }
+    
+    .intro-content p {
+        font-size: 1rem;
+    }
+}
+
+.intro-section {
+    position: absolute;
+    top: 160px;
+    right: 220px;
+    max-width: 500px;
+    text-align: center;
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 100;
+    box-sizing: border-box; /* Ensures padding is included in the max-width */
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.intro-content .welcome-text {
+    color: #ffffff;
+}
+
+.intro-content .site-name {
+    color: #00ff00;
+    text-shadow: 2px 2px #000000;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* Media Query for Tablets and Smaller Screens */
+@media screen and (max-width: 1024px) {
+    .intro-section {
+        top: 20px;
+        right: 20px;
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .intro-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .intro-content p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media screen and (max-width: 768px) {
+    .intro-section {
+        top: 10px;
+        right: 10px;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .intro-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-content p {
+        font-size: 1rem;
+    }
+}

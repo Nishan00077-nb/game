@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GameSphere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <header>
+
+        <div class="logo">
+           <a href="/index.html"><h1>GameSphere</h1></a>
+            
+        </div>
+    
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="/contact/contact.html" target="_blank">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            overflow-x: hidden;
+            overflow: hidden;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 50px;
+            text-align: center;
+            background: linear-gradient(135deg, #1f1f1f, #323232);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .about-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #00e676;
+            animation: slideDown 1.5s ease-in-out;
+        }
+
+        .about-description {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.8s ease-in-out;
+        }
+
+        .highlight {
+            color: #00e676;
+            font-weight: 600;
+        }
+
+        .about-btn {
+            padding: 15px 30px;
+            background-color: #00e676;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: popUp 2s ease-in-out;
+        }
+
+        .about-btn:hover {
+            background-color: #00c853;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 28px;
+            }
+
+            .about-description {
+                font-size: 16px;
+            }
+        }
+
+        
+header {
+    background-color: transparent;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+header .logo {
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    color: #ffffff;
+    padding-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header .logo a{
+    text-decoration: none;
+    color: white;
+}
+
+
+header nav {
+    padding-right: 20px; 
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; 
+}
+
+header nav ul li {
+    margin-left: 20px;
+    transition: margin-left 0.5s;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    color: #ffffff;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+header nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav {
+        padding-right: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="about-section">
+        <h1 class="about-title">Welcome to GameSphere</h1>
+        <p class="about-description">
+            At <span class="highlight">GameSphere</span>, we are passionate gamers who believe in creating a vibrant community where players from all walks of life can connect, compete, and share their gaming experiences.<br><br>
+            Our mission is to bring you the latest news, reviews, and insights from the gaming world, while also offering a platform where you can showcase your skills, discover new games, and join exciting tournaments.<br><br>
+            Whether you're a casual gamer or a hardcore enthusiast, <span class="highlight">GameSphere</span> has something for you.<br><br>
+            Join us as we explore new realms, conquer challenges, and celebrate the ever-evolving world of gaming. Let’s make gaming more fun, together!
+        </p>
+        <button class="about-btn">Join the Community</button>
+    </section>
+
+</body>
+</html>

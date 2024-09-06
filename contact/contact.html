@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="contact.css">
+
+<section class="contact-section">
+    <div class="contact-intro">
+        <h2 class="contact-title">Get in Touch</h2>
+        <p class="contact-description">
+            Fill out the form below and we'll get back to you as soon as possible.
+        </p>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="66ee5f36-0b87-47d4-be6e-d75175da1105" />
+        <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+        <input type="hidden" name="from_name" value="GameSphere" />
+
+        <div class="form-group-container">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone</label>
+                <input id="phone" name="phone" class="form-input" placeholder="Optional" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+            </div>
+        </div>
+        <button class="form-submit" type="submit">Send Message</button>
+    </form>
+
+    <div id="responseMessage" class="slide-down" style="display: none;">Your form has been successfully sent!</div>
+</section>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const messageBox = document.getElementById('responseMessage');
+
+        // Basic validation
+        if (!name || !email || !message) {
+            messageBox.innerText = 'Please fill out all required fields (Name, Email, and Message).';
+            messageBox.style.display = 'block';
+            messageBox.classList.add('visible', 'error');
+            return; // Prevent the form from being submitted if validation fails
+        }
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                messageBox.innerText = 'Your form has been successfully sent!';
+                messageBox.style.display = 'block';
+                messageBox.classList.remove('error');
+                messageBox.classList.add('visible');
+
+                setTimeout(() => {
+                    window.open('contact.html', '_blank'); // Open contact page in a new tab
+                    window.location.href = '/index.html'; // Redirect to home page
+                }, 3000);
+            } else {
+                messageBox.innerText = 'There was an error sending your form. Please try again.';
+                messageBox.style.display = 'block';
+                messageBox.classList.add('visible', 'error');
+            }
+        })
+        .catch(error => {
+            messageBox.innerText = 'There was an error sending your form. Please try again.';
+            messageBox.style.display = 'block';
+            messageBox.classList.add('visible', 'error');
+        });
+    });
+</script>
+
+
+<style>
+    /* Your existing CSS */
+
+    /* Success/Error Message Styling */
+    #responseMessage {
+        position: fixed;
+        top: -100px;
+        left: 0;
+        right: 0;
+        background-color: #4CAF50; /* Green background */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 18px;
+        z-index: 1000;
+        transition: top 0.5s ease;
+    }
+
+    #responseMessage.visible {
+        top: 0;
+    }
+
+    /* Error message styling */
+    #responseMessage.error {
+        background-color: #f44336; /* Red background */
+    }
+</style>
